@@ -34,15 +34,21 @@ public_users.get('/author/:author',function (req, res) {
         books_with_author.push(books[key]);
     }
   });
-  //const books_with_author= books.filter((book) => book.author === author);
-  //console.log(books_with_author);
   return res.send(books_with_author);
 });
 
 // Get all books based on title
 public_users.get('/title/:title',function (req, res) {
   //Write your code here
-  return res.status(300).json({message: "Yet to be implemented"});
+  const title = req.params.title;
+  const keys = Object.keys(books);
+  let books_with_title = [];
+  keys.forEach(key => {
+    if(books[key]["title"] === title){
+        books_with_title.push(books[key]);
+    }
+  });
+  return res.send(books_with_title);
 });
 
 //  Get book review
