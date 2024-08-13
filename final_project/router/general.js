@@ -4,8 +4,6 @@ let isValid = require("./auth_users.js").isValid;
 let users = require("./auth_users.js").users;
 const public_users = express.Router();
 
-let users = []
-
 // Check if a user with the given username already exists
 const doesExist = (username) => {
     // Filter the users array for any user with the same username

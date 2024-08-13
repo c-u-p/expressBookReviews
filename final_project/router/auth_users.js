@@ -61,7 +61,7 @@ regd_users.post("/login", (req,res) => {
 // Add a book review
 regd_users.put("/auth/review/:isbn", (req, res) => {
   //Write your code here
-  const isbn = req.params.isbn;.
+  const isbn = req.params.isbn;
   const review = req.query.review;
   const username = req.session.authorization["username"];
   books[isbn]["reviews"] = {username : review};
